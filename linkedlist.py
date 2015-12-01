@@ -14,8 +14,11 @@ for i in range(400):
         foo = re.search('[-+]?\d+[\.]?\d*', r.text)
         nothing = foo.group(0)
         print(r.text)
+        print(nothing) 
     except AttributeError as e:
         print(r.text)
         nothing = input("give me a new number")
 
+        
+        
         

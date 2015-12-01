@@ -40,5 +40,4 @@ for i in range(len(zipped.namelist())):
     else:
         out.append(step)
     clue = step + '.txt'
-    comments = zipped.getinfo('{}.txt'.format(i)).comment.decode('utf-8')
 print(''.join([zipped.getinfo('{}.txt'.format(i)).comment.decode('utf-8') for i in out]))

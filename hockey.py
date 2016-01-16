@@ -27,6 +27,10 @@ clue3 = 'oxygen.png'
 problem = challenge(clue3)
 
 pic = Image.open(BytesIO(problem.content))
-# loaded image into an image object , now the real work begins :P
+# loaded image into an image object , now the real work begins
 
 
+data = [pic.getpixel((i, 45)) for i in range(0, pic.size[0], 7)]
+ords = [r for r, g, b, a in data if r == g == b]
+
+print("".join(map(chr, map(int, re.findall("\d+", "".join(map(chr, ords)))))))
